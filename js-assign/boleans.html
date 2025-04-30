@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function evaluateConditions(obj) {
+            if (obj.age > 18 && obj.hasLicense) {
+                return "Eligible to drive";
+            } else if (obj.temperature > 30 || obj.humidity > 70) {
+                return "Warning: High discomfort level";
+            } else if ((obj.role === "admin" || obj.role === "editor") && obj.isActive) {
+                return "Access granted";
+            } else if (!obj.isBanned && obj.score >= 80) {
+                return "User is approved with high score";
+            } else if (obj.isMember && (obj.points > 100 || obj.level === "gold")) {
+                return "Premium Member benefits unlocked";
+            } else if ((obj.loginAttempts > 3 && !obj.isVerified) || obj.isLocked) {
+                return "Account locked";
+            } else if (obj.name && obj.name.length > 0 && obj.isActive) {
+                return "Active user with valid name";
+            } else {
+                return "No matching condition found";
+            }
+            }
+
+            console.log(evaluateConditions({ age: 20, hasLicense: true }));
+            console.log(evaluateConditions({ temperature: 32, humidity: 50 }));
+            console.log(evaluateConditions({ role: "editor", isActive: true }));
+            console.log(evaluateConditions({ isBanned: false, score: 85 }));
+            console.log(evaluateConditions({ isMember: true, points: 150, level: "silver" }));
+            console.log(evaluateConditions({ loginAttempts: 5, isVerified: false, isLocked: false }));
+            console.log(evaluateConditions({ name: "Alex", isActive: true }));
+
+    </script>
+</body>
+</html>

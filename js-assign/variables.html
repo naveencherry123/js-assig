@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var globalVar = "I am global";
+
+            function showGlobal() {
+            console.log(globalVar);     //global variable
+            }
+
+            showGlobal();
+            console.log(globalVar);    
+        function myFunction() {
+            var localVar = "I am local";
+            console.log(localVar);  //local variable
+        }
+        myFunction();
+        {
+            let blockVar = "I am block scoped";
+            console.log(blockVar);  // block scope
+        }
+        var name = "Global Name";
+
+        function myFunction() {
+            var name = "Local Name";
+            console.log(name);  // Local Name
+            }
+
+        myFunction();
+        console.log(name);     // Global Name"
+
+
+    </script>
+</body>
+</html>

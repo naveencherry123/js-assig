@@ -1,0 +1,25 @@
+<!-- HTML -->
+<p>Counter: <span id="count">0</span></p>
+<button onclick="increase()">Increment</button>
+<button onclick="decrease()">Decrement</button>
+
+<script>
+// JS
+let count = 0;
+
+function updateDisplay() {
+  document.getElementById("count").textContent = count;
+}
+
+function increase() {
+  count++;
+  updateDisplay();
+}
+
+function decrease() {
+  if (count > 0) {
+    count--;
+    updateDisplay();
+  }
+}
+</script>
